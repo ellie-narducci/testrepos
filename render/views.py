@@ -4,17 +4,17 @@ import datetime
 
 # Create your views here.
 
+lapTime = 0
+previouslyUp = False
+
 def index(request):
-    lapTime = 0
-    previouslyUp = False
-    while True:
-        currentTime = datetime.time.minute
-        if (currentTime >= lapTime+2):
-            if (previouslyUp):
-                previouslyUp = False
-                lapTime = datetime.time.minute
-                return HttpResponse(status=500)
-            elif (not previouslyUp):
-                previouslyUp = True
-                lapTime = datetime.time.minute
-                return render(request, 'render/index.html', {})
+    currentTime = datetime.time.minute
+    if (currentTime >= lapTime+2):
+        if (previouslyUp):
+            previouslyUp = False
+            lapTime = datetime.time.minute
+            return HttpResponse(status=500)
+        elif (not previouslyUp):
+            previouslyUp = True
+            lapTime = datetime.time.minute
+            return render(request, 'render/index.html', {})
