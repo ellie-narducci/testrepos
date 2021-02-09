@@ -8,13 +8,14 @@ lapTime = 0
 previouslyUp = False
 
 def index(request):
-    currentTime = datetime.time.minute
-    if (currentTime >= lapTime+2):
-        if (previouslyUp):
-            previouslyUp = False
-            lapTime = datetime.time.minute
-            return HttpResponse(status=400)
-        elif (not previouslyUp):
-            previouslyUp = True
-            lapTime = datetime.time.minute
-            return render(request, 'render/index.html', {})
+    return render(request, 'render/index.html', {})
+    # currentTime = datetime.time.minute
+    # if (currentTime >= lapTime+2):
+    #     if (previouslyUp):
+    #         previouslyUp = False
+    #         lapTime = datetime.time.minute
+    #         return HttpResponse(status=400)
+    #     elif (not previouslyUp):
+    #         previouslyUp = True
+    #         lapTime = datetime.time.minute
+    #         return render(request, 'render/index.html', {})
