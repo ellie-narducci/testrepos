@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import datetime
+
+import sys
 
 # Create your views here.
 
-lapTime = 0
-previouslyUp = False
 
 def index(request):
-    currentTime = datetime.time.minute
-    print(currentTime)
-    return render(request, 'render/index.html', {})
-    # return HttpResponse(status=500)
+    if (sys.stdin == "up"):
+        return render(request, 'render/index.html', {})
+    elif (sys.stdin == "down"):
+        return HttpResponse(status=500)
+    else:
+        return HttpResponse(status=500)
+
