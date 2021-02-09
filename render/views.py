@@ -13,7 +13,7 @@ def index(request):
         if (previouslyUp):
             previouslyUp = False
             lapTime = datetime.time.minute
-            return HttpResponse(status=500)
+            return HttpResponse(status=400)
         elif (not previouslyUp):
             previouslyUp = True
             lapTime = datetime.time.minute
