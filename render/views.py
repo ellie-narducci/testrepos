@@ -10,5 +10,5 @@ previouslyUp = False
 def index(request):
     currentTime = datetime.time.minute
     print(currentTime)
-    # return render(request, 'render/index.html', {})
-    return HttpResponse(status=400)
+    return render(request, 'render/index.html', {})
+    # return HttpResponse(status=500)
