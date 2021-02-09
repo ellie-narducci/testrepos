@@ -3,11 +3,10 @@ from django.http import HttpResponse
 import datetime
 
 # Create your views here.
-lapTime = 0
 
 def index(request):
-    lapTime = datetime.time.minute
-    previouslyUp = True
+    lapTime = 0
+    previouslyUp = False
     while True:
         currentTime = datetime.time.minute
         if (currentTime >= lapTime+2):
