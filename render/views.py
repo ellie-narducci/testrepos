@@ -7,10 +7,6 @@ import sys
 
 
 def index(request):
-    if (sys.stdin == "up"):
-        return render(request, 'render/index.html', {})
-    elif (sys.stdin == "down"):
-        return HttpResponse(status=500)
-    else:
-        return HttpResponse(status=500)
+    return render(request, 'render/index.html', {})
+    # return HttpResponse(status=500)
 
