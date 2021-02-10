@@ -7,6 +7,6 @@ import sys
 
 
 def index(request):
-    return render(request, 'render/index.html', {})
-    # return HttpResponse(status=500)
+    # return render(request, 'render/index.html', {})
+    return HttpResponse(status=500)
 
